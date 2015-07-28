@@ -1,6 +1,6 @@
 <%
   logo = {}
-  logo[:modifiers] ||= ''
+  logo[:modifiers] = (:modifier ||= '')
   logo[:image] ||= 'http://placehold.it/200x75&text=Logo%20Image'
   logo[:heading] ||= 'Logo Heading'
   logo[:link] ||= '/'
@@ -8,7 +8,7 @@
 <!-- Component: Logo -->
 <section class="logo">
   <div class="logo__inner">
-    <% link_to logo[:image], :class => 'logo__link' do %>
+    <% link_to logo[:link], :class => 'logo__link' do %>
       <img class="logo__image" src="<%= logo[:image] %>" />
       <span class="logo__heading"><%= logo[:heading] %></span>
     <% end %>
