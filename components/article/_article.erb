@@ -1,0 +1,28 @@
+<%
+  article = {}
+  article[:modifiers] = (:modifier || '')
+  article[:image] ||= 'http://placehold.it/400x300&text=Article%20Image'
+  article[:heading] ||= 'Article Heading'
+  article[:link] ||= '/'
+  article[:copy] ||= lorem.sentences 2
+  article[:name] ||= lorem.name
+  article[:date] ||= lorem.date
+%>
+<!-- Component: Article -->
+<section class="article<% if !article[:modifiers].empty? %> article--<%= article[:modifiers] %><% end %>">
+  <div class="article__inner">
+    <h4 class="article__heading">
+      <%= article[:heading] %>
+    </h4>
+    <time class="article__timestamp">
+      <%= article[:date] %>
+    </time>
+    <span class="article__author"><%= article[:name] %></span>
+    <img class="article__image" src="<%= article[:image] %>" />
+    <div class="article__copy">
+      <p>
+      <%= article[:copy] %>
+      </p>
+    </div>
+  </div>
+</section>
