@@ -6,7 +6,7 @@
  * variants (inversions, etc.).
  *
  */
-@mixin x-font-face($font-family, $file-path, $query-string, $weight: normal, $style: normal) {
+@mixin x-font-face($font-family, $weight, $style, $file-path, $query-string: '') {
   @font-face {
     font-family: $font-family;
     font-weight: $weight;
